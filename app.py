@@ -131,7 +131,8 @@ with tab2:
                 ss.zones_df = pd.concat([ss.zones_df, pd.DataFrame({"Zona": [qn], "Puntos": [txt]})], ignore_index=True)
                 ss.zver += 1
                 st.rerun()
-        edited = st.data_editor(ss.zones_df, num_rows="dynamic", use_container_width=True, key=f"zed{ss.zver}",
+       ss.zones_df = ss.zones_df.astype({"Zona": "object", "Puntos": "object"})  
+       edited = st.data_editor(ss.zones_df, num_rows="dynamic", use_container_width=True, key=f"zed{ss.zver}",            
                                 column_config={"Puntos": st.column_config.TextColumn("Puntos (% x,y; x,y; …)")})
         zlist, errs = [], []
         for _, r in edited.iterrows():
