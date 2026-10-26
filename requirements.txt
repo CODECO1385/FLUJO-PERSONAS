@@ -1,7 +1,9 @@
+--extra-index-url https://download.pytorch.org/whl/cpu
 streamlit>=1.35
-opencv-python>=4.8
+opencv-python-headless
+torch
+torchvision
 ultralytics>=8.2
 numpy
 pandas
 matplotlib
-pytest
